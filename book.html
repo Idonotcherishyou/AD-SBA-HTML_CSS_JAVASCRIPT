@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+  function validate() {
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var Email = document.getElementById("exampleFormControlInput1").value;
+    var password = document.getElementById("password").value;
+    var confirmpassword = document.getElementById("confirmpassword").value;
+
+    if (firstName.length == 0 & lastName.length == 0 & Email.length == 0 & password.length == 0 & confirmpassword.length == 0){
+      alert("Please input fields")
+      return false;
+
+    }
+    if (firstName.match(/\s/)) {
+      alert("first name cannot contain a space")
+      return false;
+    }
+    if (firstName.length == 0){
+      alert("first name cannot be empty")
+      return false;
+    }
+    if (lastName.length === 0){
+      alert("Last name cannot be empty")
+      return false;
+    }
+    if (Email.length === 0) {
+      alert("Email cannot be empty")
+      return false;
+    }
+    if (password.length == 0){
+      alert("Please input password")
+      return false;
+    }
+    if (confirmpassword.length == 0){
+      alert("Please input confirm password")
+      return false;
+    }
+    if (!(confirmpassword === password)){
+      alert("Your password does not match!")
+      return false;
+    }
+    if(password.length < 8 && password.length > 20){
+      alert("Password must be le")
+    }
+
+
+
+    return true;
+
+  }
+
+</script>
+
+<body>
+<h1>User Registration Form</h1>
+<div class="card">
+  <div class="card-body">
+
+    <form onsubmit="return validate()" action="">
+      <div class="mb-3">
+        <label for="FirstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="first Name" name="firstName">
+      </div>
+      <div class="mb-3">
+        <label for="LastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="last Name" name="lastName">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="Email">
+      </div>
+      <div class="mb-3">
+        <label for="Password" class="form-label">password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+      </div>
+      <div class="mb-3">
+        <label for="ConfirmPassword" class="form-label">Confirm password</label>
+        <input type="confirmpassword" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirm password ">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create Account</button>
+
+    </form>
+
+
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>
